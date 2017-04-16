@@ -13,7 +13,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import pageObjects.InputForms;
-import pageObjects.InputForms.SimpleFormDemo;
+import pageObjects.InputForms.BootstrapAlertMessages;
+import pageObjects.InputForms.TwoInputFields;
+import pageObjects.InputForms.singleInputField;
 
 public class TC1_InputForm {
 
@@ -29,19 +31,55 @@ public class TC1_InputForm {
 		drv=new ChromeDriver();
 	}
 	
-	@Test
-	public void test()
+	//@Test
+	public void basicFirstForm()
 	{
 		drv.get(constants.urlFirstForm);
 		
 		// First test on the page to check if correct message is getting printed
-		SimpleFormDemo.user_message(drv).sendKeys(constants.FirstFormMessage);
-	    SimpleFormDemo.showMessage(drv).click();
+		singleInputField.user_message(drv).sendKeys(constants.FirstFormMessage);
+		singleInputField.showMessage(drv).click();
 	    String temp="";
-	    temp=SimpleFormDemo.yourMessage(drv).getText();
+	    temp=singleInputField.yourMessage(drv).getText();
 	    Assert.assertEquals(constants.FirstFormMessage, temp);
-	    		
+	    
+	    // Second Test to check if addition of number is correct 
+	    TwoInputFields.aValue(drv).sendKeys("10");
+	    TwoInputFields.bValue(drv).sendKeys("30");
+	    TwoInputFields.getTotal(drv).click();
+	    String sum=TwoInputFields.displayvalue(drv).getText();
+	    Assert.assertEquals(sum, "40");
+	    
 	}
+	
+	@Test
+	public void bootstrapAlertMessage() throws InterruptedException
+	{
+		drv.get(constants.urlSecondForm);
+		
+		// second test on the page to check if buttons are working fine
+
+		BootstrapAlertMessages.autoclosable_btn_success(drv).click();
+		Thread.sleep(3000);
+		
+		BootstrapAlertMessages.normal_btn_success(drv).click();
+		BootstrapAlertMessages.autoclosable_btn_warning(drv).click();
+		BootstrapAlertMessages.normal_btn_warning(drv).click();
+		
+		BootstrapAlertMessages.autoclosable_btn_danger(drv).click();
+		BootstrapAlertMessages.normal_btn_danger(drv).click();
+		BootstrapAlertMessages.autoclosable_btn_info(drv).click();
+		BootstrapAlertMessages.normal_btn_info(drv).click();
+		
+		
+	    
+	}
+	
+	
+	
+	
+	
+	
 	
 	@AfterTest
 	public void aftersetup()

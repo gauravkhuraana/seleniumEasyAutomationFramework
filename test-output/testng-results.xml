@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6016" started-at="2017-04-09T10:07:53Z" finished-at="2017-04-09T10:07:59Z">
+  <suite name="Default suite" duration-ms="18467" started-at="2017-04-16T13:55:05Z" finished-at="2017-04-16T13:55:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6016" started-at="2017-04-09T10:07:53Z" finished-at="2017-04-09T10:07:59Z">
+    <test name="Default test" duration-ms="18467" started-at="2017-04-16T13:55:05Z" finished-at="2017-04-16T13:55:23Z">
       <class name="testCases.TC1_InputForm">
-        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="initial" is-config="true" duration-ms="2417" started-at="2017-04-09T15:37:53Z" finished-at="2017-04-09T15:37:56Z">
+        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="initial" is-config="true" duration-ms="2447" started-at="2017-04-16T19:25:05Z" finished-at="2017-04-16T19:25:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initial -->
-        <test-method status="PASS" signature="test()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="test" duration-ms="2720" started-at="2017-04-09T15:37:56Z" finished-at="2017-04-09T15:37:58Z">
+        <test-method status="PASS" signature="bootstrapAlertMessage()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="bootstrapAlertMessage" duration-ms="15121" started-at="2017-04-16T19:25:07Z" finished-at="2017-04-16T19:25:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="aftersetup" is-config="true" duration-ms="862" started-at="2017-04-09T15:37:58Z" finished-at="2017-04-09T15:37:59Z">
+        </test-method> <!-- bootstrapAlertMessage -->
+        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="aftersetup" is-config="true" duration-ms="884" started-at="2017-04-16T19:25:23Z" finished-at="2017-04-16T19:25:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersetup -->
