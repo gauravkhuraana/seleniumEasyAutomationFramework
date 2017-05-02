@@ -5,8 +5,8 @@
     <classes>
       <class name="testCases.TC1_InputForm">
         <methods>
-          <include name="bootstrapAlertMessage"/>
           <include name="initial"/>
+          <include name="testProgressBarDownload"/>
           <include name="aftersetup"/>
         </methods>
       </class> <!-- testCases.TC1_InputForm -->

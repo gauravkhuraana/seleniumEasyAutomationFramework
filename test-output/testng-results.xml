@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18467" started-at="2017-04-16T13:55:05Z" finished-at="2017-04-16T13:55:23Z">
+  <suite name="Default suite" duration-ms="27683" started-at="2017-05-02T06:40:59Z" finished-at="2017-05-02T06:41:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18467" started-at="2017-04-16T13:55:05Z" finished-at="2017-04-16T13:55:23Z">
+    <test name="Default test" duration-ms="27683" started-at="2017-05-02T06:40:59Z" finished-at="2017-05-02T06:41:27Z">
       <class name="testCases.TC1_InputForm">
-        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="initial" is-config="true" duration-ms="2447" started-at="2017-04-16T19:25:05Z" finished-at="2017-04-16T19:25:07Z">
+        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="initial" is-config="true" duration-ms="3458" started-at="2017-05-02T12:10:59Z" finished-at="2017-05-02T12:11:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initial -->
-        <test-method status="PASS" signature="bootstrapAlertMessage()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="bootstrapAlertMessage" duration-ms="15121" started-at="2017-04-16T19:25:07Z" finished-at="2017-04-16T19:25:23Z">
+        <test-method status="PASS" signature="testProgressBarDownload()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="testProgressBarDownload" duration-ms="24179" started-at="2017-05-02T12:11:03Z" finished-at="2017-05-02T12:11:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bootstrapAlertMessage -->
-        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@7921b0a2]" name="aftersetup" is-config="true" duration-ms="884" started-at="2017-04-16T19:25:23Z" finished-at="2017-04-16T19:25:23Z">
+        </test-method> <!-- testProgressBarDownload -->
+        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="aftersetup" is-config="true" duration-ms="0" started-at="2017-05-02T12:11:27Z" finished-at="2017-05-02T12:11:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersetup -->

@@ -69,6 +69,10 @@ public class InputForms {
 		{
 			return drv.findElement(By.id("normal-btn-warning"));
 		}
+		public static WebElement normal_smsg_close(WebDriver drv)
+		{
+			return drv.findElement(By.className("close"));
+		}
 		public static WebElement autoclosable_btn_danger(WebDriver drv)
 		{
 			return drv.findElement(By.id("autoclosable-btn-danger"));
