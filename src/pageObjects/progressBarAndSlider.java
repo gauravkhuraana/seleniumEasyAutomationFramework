@@ -38,10 +38,13 @@ public class progressBarAndSlider {
 	}
 	public static class dragAndDropRangeSlider
 	{
-		public static WebElement downloadButton(WebDriver drv)
+		public static WebElement rangeSlider(WebDriver drv)
 		{
-		return drv.findElement(By.id("cricle-btn"))	;
+		return drv.findElement(By.name("range"))	;
 		}
-		
+		public static WebElement rangeValue(WebDriver drv)
+		{
+		return drv.findElement(By.id("range"))	;
+		}
 	}
 }

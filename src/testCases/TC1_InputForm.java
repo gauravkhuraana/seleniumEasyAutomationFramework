@@ -4,6 +4,7 @@ package testCases;
 import utility.constants;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,6 +22,7 @@ import pageObjects.InputForms.TwoInputFields;
 import pageObjects.InputForms.singleInputField;
 import pageObjects.progressBarAndSlider;
 import pageObjects.progressBarAndSlider.bootstrapDownload;
+import pageObjects.progressBarAndSlider.dragAndDropRangeSlider;
 import pageObjects.progressBarAndSlider.jQueryDownloadPbar;
 
 public class TC1_InputForm {
@@ -147,7 +149,7 @@ public class TC1_InputForm {
 	
 	
 	// to check the progress bar reaches 100%
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void testProgressBarDownload()
 	{
 		drv.navigate().to(utility.constants.downloadProgressBarURL);
@@ -155,11 +157,29 @@ public class TC1_InputForm {
 	    bootstrapDownload.downloadButton(drv).click();
 		
 		WebDriverWait wait = new WebDriverWait(drv,27);
-		System.out.println("value is " + bootstrapDownload.percenttext(drv).getText());	
-				
+						
 		wait.until(ExpectedConditions.textToBePresentInElement( bootstrapDownload.percenttext(drv),"100%"));
-	//	wait.until(ExpectedConditions.
+
     }
+	
+	@Test
+	public void testDragAndDropRangeSliders()
+	{
+		drv.navigate().to(utility.constants.dragDropRangeSlider);
+		
+		// Testing default value
+		String defaultvalue = dragAndDropRangeSlider.rangeValue(drv).getText();
+		Assert.assertEquals(defaultvalue, "10");
+		
+		Dimension dim = dragAndDropRangeSlider.rangeSlider(drv).getSize();
+		System.out.println(" Dimnesion of the range is " + dim.width + "height = " + dim.getHeight() +"height by another way = " + dim.height);
+		
+		dragAndDropRangeSlider.rangeSlider(drv).click();
+		
+	}
+	
+
+	
 	
 	@AfterTest
 	public void aftersetup()

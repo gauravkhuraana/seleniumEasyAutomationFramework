@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27683" started-at="2017-05-02T06:40:59Z" finished-at="2017-05-02T06:41:27Z">
+  <suite name="Default suite" duration-ms="5813" started-at="2017-05-03T09:53:06Z" finished-at="2017-05-03T09:53:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27683" started-at="2017-05-02T06:40:59Z" finished-at="2017-05-02T06:41:27Z">
+    <test name="Default test" duration-ms="5813" started-at="2017-05-03T09:53:06Z" finished-at="2017-05-03T09:53:12Z">
       <class name="testCases.TC1_InputForm">
-        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="initial" is-config="true" duration-ms="3458" started-at="2017-05-02T12:10:59Z" finished-at="2017-05-02T12:11:03Z">
+        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="initial" is-config="true" duration-ms="3421" started-at="2017-05-03T15:23:06Z" finished-at="2017-05-03T15:23:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initial -->
-        <test-method status="PASS" signature="testProgressBarDownload()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="testProgressBarDownload" duration-ms="24179" started-at="2017-05-02T12:11:03Z" finished-at="2017-05-02T12:11:27Z">
+        <test-method status="PASS" signature="testDragAndDropRangeSliders()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="testDragAndDropRangeSliders" duration-ms="2337" started-at="2017-05-03T15:23:10Z" finished-at="2017-05-03T15:23:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testProgressBarDownload -->
-        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="aftersetup" is-config="true" duration-ms="0" started-at="2017-05-02T12:11:27Z" finished-at="2017-05-02T12:11:27Z">
+        </test-method> <!-- testDragAndDropRangeSliders -->
+        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@548b7f67]" name="aftersetup" is-config="true" duration-ms="0" started-at="2017-05-03T15:23:12Z" finished-at="2017-05-03T15:23:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersetup -->
