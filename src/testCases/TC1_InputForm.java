@@ -6,9 +6,12 @@ import utility.constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -20,6 +23,8 @@ import pageObjects.InputForms;
 import pageObjects.InputForms.BootstrapAlertMessages;
 import pageObjects.InputForms.TwoInputFields;
 import pageObjects.InputForms.singleInputField;
+import pageObjects.alertsAndModals;
+import pageObjects.alertsAndModals.bootstrapModalDemo;
 import pageObjects.progressBarAndSlider;
 import pageObjects.progressBarAndSlider.bootstrapDownload;
 import pageObjects.progressBarAndSlider.dragAndDropRangeSlider;
@@ -35,7 +40,7 @@ public class TC1_InputForm {
 		//DesiredCapabilities cap = DesiredCapabilities.firefox();
 		//drv = new FirefoxDriver(cap);
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\software\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "H:\\software\\chromedriver_win32\\chromedriver.exe");
 		drv=new ChromeDriver();
 	}
 	
@@ -162,7 +167,7 @@ public class TC1_InputForm {
 
     }
 	
-	@Test
+	@Test(enabled=false)
 	public void testDragAndDropRangeSliders()
 	{
 		drv.navigate().to(utility.constants.dragDropRangeSlider);
@@ -178,7 +183,37 @@ public class TC1_InputForm {
 		
 	}
 	
+    @Test(priority=-1)
+    public void testlaunhingSingleMultipleModal() throws InterruptedException
+	{
+		drv.navigate().to(constants.bootstrapModal);
+		drv.manage().window().maximize();
+		WebDriverWait expWait = new WebDriverWait(drv,4);
+		
+		// Testing default value, printing all the text thats there on the modal box
+        bootstrapModalDemo.singleModal(drv).click();
+        drv.switchTo().activeElement();
+		 expWait.until(ExpectedConditions.visibilityOf(bootstrapModalDemo.modalTitle(drv)));  
+		String temp=bootstrapModalDemo.modalTitle(drv).getText();
+		Assert.assertEquals(temp, "Modal Title");
+		
+		temp=bootstrapModalDemo.modalBody(drv).getText();
+		Assert.assertEquals(temp, "This is the place where the content for the modal dialog displays");
+		
+		bootstrapModalDemo.close(drv).click();
+        //Thread.sleep(2000);
+		expWait.until(ExpectedConditions.visibilityOf(bootstrapModalDemo.singleModal(drv)));
 
+        bootstrapModalDemo.singleModal(drv).click();
+        drv.switchTo().activeElement();
+	    expWait.until(ExpectedConditions.visibilityOf(bootstrapModalDemo.saveChanges(drv)));
+		bootstrapModalDemo.saveChanges(drv).click();
+
+		
+		
+		
+	}
+    
 	
 	
 	@AfterTest

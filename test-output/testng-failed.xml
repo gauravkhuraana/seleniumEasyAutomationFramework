@@ -5,8 +5,8 @@
     <classes>
       <class name="testCases.TC1_InputForm">
         <methods>
-          <include name="testDragAndDropRangeSliders"/>
           <include name="initial"/>
+          <include name="testlaunhingSingleMultipleModal"/>
           <include name="aftersetup"/>
         </methods>
       </class> <!-- testCases.TC1_InputForm -->
