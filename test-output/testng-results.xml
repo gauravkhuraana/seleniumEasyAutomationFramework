@@ -1,81 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="6" total="7" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22443" started-at="2017-05-08T16:58:08Z" finished-at="2017-05-08T16:58:30Z">
+  <suite name="Default suite" duration-ms="7556" started-at="2017-06-03T03:53:45Z" finished-at="2017-06-03T03:53:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22443" started-at="2017-05-08T16:58:08Z" finished-at="2017-05-08T16:58:30Z">
+    <test name="Default test" duration-ms="7556" started-at="2017-06-03T03:53:45Z" finished-at="2017-06-03T03:53:53Z">
       <class name="testCases.TC1_InputForm">
-        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@5f375618]" name="initial" is-config="true" duration-ms="13340" started-at="2017-05-08T22:28:08Z" finished-at="2017-05-08T22:28:21Z">
+        <test-method status="PASS" signature="initial()[pri:0, instance:testCases.TC1_InputForm@1753acfe]" name="initial" is-config="true" duration-ms="4623" started-at="2017-06-03T09:23:45Z" finished-at="2017-06-03T09:23:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initial -->
-        <test-method status="FAIL" signature="testlaunhingSingleMultipleModal()[pri:-1, instance:testCases.TC1_InputForm@5f375618]" name="testlaunhingSingleMultipleModal" duration-ms="8962" started-at="2017-05-08T22:28:21Z" finished-at="2017-05-08T22:28:30Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[unknown error: Element <a data-toggle="modal" href="#myModal0" class="btn btn-primary">...</a> is not clickable at point (467, 394). Other element would receive the click: <div class="modal fade" id="myModal0" style="z-index: 1040; display: block; padding-right: 16px;">...</div>
-  (Session info: chrome=58.0.3029.96)
-  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 38 milliseconds
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'GAURAV', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\gaurav\AppData\Local\Temp\scoped_dir4972_5187}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.96, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 9be1bf085b80b9aab395e21e686d3e69]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <a data-toggle="modal" href="#myModal0" class="btn btn-primary">...</a> is not clickable at point (467, 394). Other element would receive the click: <div class="modal fade" id="myModal0" style="z-index: 1040; display: block; padding-right: 16px;">...</div>
-  (Session info: chrome=58.0.3029.96)
-  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 10.0.14393 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 38 milliseconds
-Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
-System info: host: 'GAURAV', ip: '192.168.1.6', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_102'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.29.461591 (62ebf098771772160f391d75e589dc567915b233), userDataDir=C:\Users\gaurav\AppData\Local\Temp\scoped_dir4972_5187}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=58.0.3029.96, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 9be1bf085b80b9aab395e21e686d3e69
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:215)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:167)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:671)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:272)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
-	at testCases.TC1_InputForm.testlaunhingSingleMultipleModal(TC1_InputForm.java:207)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+        <test-method status="PASS" signature="dataListFilter()[pri:-16, instance:testCases.TC1_InputForm@1753acfe]" name="dataListFilter" duration-ms="2851" started-at="2017-06-03T09:23:50Z" finished-at="2017-06-03T09:23:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testlaunhingSingleMultipleModal -->
-        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@5f375618]" name="aftersetup" is-config="true" duration-ms="1" started-at="2017-05-08T22:28:30Z" finished-at="2017-05-08T22:28:30Z">
+        </test-method> <!-- dataListFilter -->
+        <test-method status="PASS" signature="aftersetup()[pri:0, instance:testCases.TC1_InputForm@1753acfe]" name="aftersetup" is-config="true" duration-ms="0" started-at="2017-06-03T09:23:53Z" finished-at="2017-06-03T09:23:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersetup -->

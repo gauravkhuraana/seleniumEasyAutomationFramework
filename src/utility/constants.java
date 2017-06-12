@@ -15,6 +15,9 @@ public class constants {
 	public static String bootstrapModal = "http://www.seleniumeasy.com/test/bootstrap-modal-demo.html";
 
 
-	
+	public static String dynamicDataLoading = "http://www.seleniumeasy.com/test/dynamic-data-loading-demo.html";	
 
+	public static String datalistFilter="http://www.seleniumeasy.com/test/data-list-filter-demo.html";
+	
+	
 }

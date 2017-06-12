@@ -3,12 +3,21 @@ package testCases;
 
 import utility.constants;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -25,6 +34,8 @@ import pageObjects.InputForms.TwoInputFields;
 import pageObjects.InputForms.singleInputField;
 import pageObjects.alertsAndModals;
 import pageObjects.alertsAndModals.bootstrapModalDemo;
+import pageObjects.listBox;
+import pageObjects.others;
 import pageObjects.progressBarAndSlider;
 import pageObjects.progressBarAndSlider.bootstrapDownload;
 import pageObjects.progressBarAndSlider.dragAndDropRangeSlider;
@@ -33,15 +44,34 @@ import pageObjects.progressBarAndSlider.jQueryDownloadPbar;
 public class TC1_InputForm {
 
 	WebDriver drv ;
+	
+	@Parameters("browser")
+	
 	@BeforeTest
-	public void initial()
+	public void initial(String browser)
 	{
 		//System.setProperty("webdriver.gecko.driver", "H:\\software\\geckodriver-v0.10.0-win64\\geckodriver.exe");
 		//DesiredCapabilities cap = DesiredCapabilities.firefox();
 		//drv = new FirefoxDriver(cap);
 		
-		System.setProperty("webdriver.chrome.driver", "H:\\software\\chromedriver_win32\\chromedriver.exe");
+		
+
+		if(browser.equalsIgnoreCase("chrome"))
+		{
+		System.setProperty("webdriver.chrome.driver", ".\\src\\executables\\chromedriver.exe");
 		drv=new ChromeDriver();
+		}
+		else if (browser.equalsIgnoreCase("ie"))
+		{
+			System.setProperty("webdriver.ie.driver", ".\\src\\executables\\chromedriver.exe");
+            drv = new InternetExplorerDriver();
+		}
+		else if(browser.equalsIgnoreCase("ff"))
+		{
+			System.setProperty("webdriver.ff.driver", ".\\src\\executables\\chromedriver.exe");
+			drv = new FirefoxDriver();
+		}
+			
 	}
 	
 	@Test(enabled=false)
@@ -183,7 +213,7 @@ public class TC1_InputForm {
 		
 	}
 	
-    @Test(priority=-1)
+    @Test(priority=-1,enabled=false)
     public void testlaunhingSingleMultipleModal() throws InterruptedException
 	{
 		drv.navigate().to(constants.bootstrapModal);
@@ -212,6 +242,55 @@ public class TC1_InputForm {
 		
 		
 		
+	}
+    
+    @Test(priority=-15,enabled=false)
+    public void dynamicDataLoading() throws InterruptedException, ClientProtocolException, IOException
+	{
+		drv.navigate().to(constants.dynamicDataLoading);
+		drv.manage().window().maximize();
+		WebDriverWait expWait = new WebDriverWait(drv,15);
+		
+		
+		// Click on Get New User  
+		others.dynamicDataLoading.getNewUser(drv).click();
+		
+		Thread.sleep(5000);
+		expWait.until(ExpectedConditions.visibilityOf(others.dynamicDataLoading.dataDetails(drv)));
+		
+		String imagesource = others.dynamicDataLoading.imageDetails(drv).getAttribute("src");
+		System.out.println("Image URL = " + imagesource);
+		
+		System.out.println("Image URL = " + others.dynamicDataLoading.dataDetails(drv).getTagName());
+		System.out.println("Image URL = " + others.dynamicDataLoading.dataDetails(drv).getText());
+		
+				
+		// Test if image is correctly loaded
+		HttpClient client = HttpClientBuilder.create().build();
+		HttpGet request =   new HttpGet(imagesource);
+		HttpResponse response = client.execute(request);
+		
+		Assert.assertEquals(response.getStatusLine().getStatusCode(),200);
+		
+		System.out.println("Image loaded successfully");
+	
+		
+	}
+    
+    @Test(priority=-16,enabled=true)
+    public void dataListFilter() throws InterruptedException, ClientProtocolException, IOException
+	{
+		drv.navigate().to(constants.datalistFilter);
+		drv.manage().window().maximize();
+        
+		//WebElement el1  = listBox.dataListFilter.totalItems(drv);
+		
+		//List<WebElement> el2 = drv.findElements(By.xpath("//div[@class='searchable-container']/div"));
+		//List<WebElement> el3 = el1.findElements(By.xpath("div"));
+        
+		List<WebElement> el4 = listBox.dataListFilter.totalItems(drv);
+		System.out.println("Total elements are " + el4.size());
+	
 	}
     
 	
